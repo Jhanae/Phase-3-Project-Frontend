@@ -12,8 +12,8 @@ return(
            <Navbar.Toggle className="coloring" />
       <Navbar.Collapse>
       <Nav>
-          <Nav.Link href="/home">Home</Nav.Link>   
-          <NavDropdown className="text-lght" title="Planets">
+          <Nav.Link href="/">Home</Nav.Link>   
+          {/* <NavDropdown className="text-lght" title="Planets"> 
           <NavDropdown.Item href="/planets">All Planets</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="/planet/Mercury">Mercury</NavDropdown.Item>
@@ -27,11 +27,9 @@ return(
           <NavDropdown.Item href="/planet/Pluto">Pluto</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="/distance">Distance From the Sun</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="/reviews">Reviews</Nav.Link>
-          <Nav.Link href="/about-us">About Us</Nav.Link>
-          <Nav.Link href="/contact-us">Contact Us</Nav.Link>
-          <Nav.Link href="/newplanet">Register a New Planet</Nav.Link>
+          </NavDropdown> */}
+          <Nav.Link href="/recipes">All Recipes</Nav.Link>
+          <Nav.Link href="/countries">Countries</Nav.Link>
       </Nav>
       </Navbar.Collapse>
   </Navbar>
