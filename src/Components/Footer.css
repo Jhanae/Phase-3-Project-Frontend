@@ -1,0 +1,12 @@
+.main-footer{
+    color: #fff;
+    background: rgb(3, 0, 0);
+    padding-top: 2rem;
+    position: relative;
+    bottom: 0;
+    align-content: center;
+    width: 100%;
+    height: auto;
+    /* z-index: -1; */
+    font-size: 3mm;
+  }
