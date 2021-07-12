@@ -22,7 +22,7 @@ function HomeBody(){
                     <br/>
                     <Link to="/intermediate">Challenge Yourself</Link>
                     <br/>
-                    <Link to="/hard">So you think you can cook?</Link>
+                    <Link to="/hard">So you think you're a chef?</Link>
                     <br/>
                 </div>
             </div>
