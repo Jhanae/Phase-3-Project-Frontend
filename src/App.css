@@ -2,19 +2,41 @@
 .App{
   text-align: center;
   display: inline;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
  /* Home Body */
- .homeBody{
-   /* background-color: rgba(26, 83, 18, 0); */
-   display:block;
+ Carousel{
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
  }
 
  .homePage{
   background-color: rgb(9, 87, 29);
-  padding-top: 1rem;
-  width:100%;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  margin-bottom: 1rem; 
+  /* display: flex-box; */
  }
-
  .Nav{
   background: rgb(3, 0, 0);
+  height: 2rem;
+}
+
+.link {
+  color: black;
+}
+.link:hover {
+   color: rgb(195, 195, 7);
+}
+
+h1{
+  color: black;
+}
+
+/* Navbar */
+.web-title{
+  text-align: start;
+  padding-top: 1rem;
 }

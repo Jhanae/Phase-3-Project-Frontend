@@ -7,22 +7,22 @@ function HomeBody(){
             <div className="row homePage">
                 <div className=" col">
                     <h1>Countries</h1>
-                    <Link to="/Thai">Thai Cuisine</Link>
+                    <Link to="/Thai" style={{ textDecoration: 'none' }} className="link">▪️ Thai Cuisine</Link>
                     <br/>
-                    <Link to="/Nigerian">Nigerian Cuisine</Link>
+                    <Link to="/Nigerian" style={{ textDecoration: 'none' }} className="link">▪️ Nigerian Cuisine</Link>
                     <br/>
-                    <Link to="/Caribbean">Caribbean Cuisine</Link>
+                    <Link to="/Caribbean" style={{ textDecoration: 'none' }} className="link">▪️ Caribbean Cuisine</Link>
                     <br/>
-                    <Link to="/Salvadoran">Salvadoran Cuisine</Link>
+                    <Link to="/Salvadoran" style={{ textDecoration: 'none' }} className="link">▪️ Salvadoran Cuisine</Link>
                     <br/>
                 </div>
                 <div className="col">
                     <h1>Difficulty</h1>
-                    <Link to="/easy">Walk in the Park</Link>
+                    <Link to="/easy" style={{ textDecoration: 'none' }} className="link">▪️ Walk in the Park</Link>
                     <br/>
-                    <Link to="/intermediate">Challenge Yourself</Link>
+                    <Link to="/intermediate" style={{ textDecoration: 'none' }} className="link">▪️ Challenge Yourself</Link>
                     <br/>
-                    <Link to="/hard">So you think you're a chef?</Link>
+                    <Link to="/hard" style={{ textDecoration: 'none' }} className="link">▪️ So you think you're a chef?</Link>
                     <br/>
                 </div>
             </div>
