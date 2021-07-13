@@ -1,44 +1,73 @@
-import { Nav, Navbar, NavDropdown } from "react-bootstrap"
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { SidebarData } from './NavbarData';
+import SubMenu from './NavbarSubMenu';
+import { IconContext } from 'react-icons/lib';
 
+const Nav = styled.div`
+  background: #15171c;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
 
-function NavbarTop() {
-return(
-  <div className="Nav" >
-  <Navbar bg="transparent" variant="dark"
-      sticky="top" expand="sm" collapseOnSelect>
-      <Navbar.Brand href="/home">
-      Recipe Finder
-      </Navbar.Brand>
-           <Navbar.Toggle className="coloring" />
-      <Navbar.Collapse>
-      <Nav>
-          <Nav.Link href="/">Home</Nav.Link>   
-          {/* <NavDropdown className="text-lght" title="Planets"> 
-          <NavDropdown.Item href="/planets">All Planets</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="/planet/Mercury">Mercury</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Venus">Venus</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Earth">Earth</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Mars">Mars</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Jupiter">Jupiter</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Saturn">Saturn</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Uranus">Uranus</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Neptune">Neptune</NavDropdown.Item>
-          <NavDropdown.Item href="/planet/Pluto">Pluto</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="/distance">Distance From the Sun</NavDropdown.Item>
-          </NavDropdown> */}
-          <Nav.Link href="/recipes">All Recipes</Nav.Link>
-          <Nav.Link href="/countries">Countries</Nav.Link>
-      </Nav>
-      </Navbar.Collapse>
-  </Navbar>
-</div>
+const NavIcon = styled(Link)`
+  margin-left: 2rem;
+  font-size: 2rem;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;  padding-right: 1rem
+`;
 
-)
-}
+const SidebarNav = styled.nav`
+  background: #15171c;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+  transition: 350ms;
+  z-index: 10;
+  padding-right: 1rem
+`;
 
-export default NavbarTop
+const SidebarWrap = styled.div`
+  width: 100%;
+`;
 
+const Sidebar = () => {
+  const [sidebar, setSidebar] = useState(false);
 
+  const showSidebar = () => setSidebar(!sidebar);
 
+  return (
+    <>
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <Nav>
+          <NavIcon to='#'>
+            <FaIcons.FaBars onClick={showSidebar} />
+          </NavIcon>
+        </Nav>
+        <SidebarNav sidebar={sidebar}>
+          <SidebarWrap>
+            <NavIcon to='#'>
+              <AiIcons.AiOutlineClose onClick={showSidebar} />
+            </NavIcon>
+            {SidebarData.map((item, index) => {
+              return <SubMenu item={item} key={index} />;
+            })}
+          </SidebarWrap>
+        </SidebarNav>
+      </IconContext.Provider>
+    </>
+  );
+};
+
+export default Sidebar;
