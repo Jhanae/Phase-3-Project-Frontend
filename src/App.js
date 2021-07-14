@@ -6,6 +6,7 @@ import Recipes from "./Components/Recipes.js"
 import RecipeContainer from "./Components/RecipeContainer"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 import { useState, useEffect } from 'react';
+import Form from "./Components/PostForm.js"
 
 function App() {
 
@@ -38,6 +39,7 @@ console.log(recipe)
             <Route exact path="/Nigerian" component={Home}/>
             <Route exact path="/" component={Home}/>
             {recipe.map(item => {return <Route exact path={`/recipe/${item.id}` } component={()=><Recipes recipe={item}/>}/>})}
+            <Route exact path="/submit" component={()=> <Form recipe={recipe} recipeSetter={recipeSetter}/>}/>
           </Switch>
         <Footer/>
       </Router>
