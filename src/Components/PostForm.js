@@ -33,22 +33,26 @@ function handleImageURL(e){
     setImageURL(e.target.value);
 }
 
-const addNewRecipe=newRecipe=>{const newArray=[...recipes, newRecipe]
-setRecipes(newArray)}
+// const addNewRecipe=newRecipe=>{const newArray=[...recipes, newRecipe]
+// setRecipes(newArray)}
 
-async function handleSubmit(e){
+    function handleSubmit(e){
     e.preventDefault()
     const newRecipe={name:recipeName,country:country,difficulty:difficulty,instructions:instructions,ingredients:ingredients,description:description,image:imageURL}
-    const response=await fetch("http://localhost:9393/recipes",{
-        headers:{"Content-Type":"application/json"},
-        method: "POST",
-        body:JSON.stringify(newRecipe)
+    fetch("http://localhost:9393/new_recipe",{
+        method: "POST", 
+        headers: {
+            "Accept": "application/json", 
+            "Content-Type": "application/json"
+          }, 
+        body: JSON.stringify(newRecipe),
+        
     })
-    const newRec=await response.json()
-    addNewRecipe(newRec);  
+    console.log(newRecipe)
+
+    // .then((response) => response.json())
+    // .then(response => addNewRecipe(response)) 
 }
-
-
 
 
 return(

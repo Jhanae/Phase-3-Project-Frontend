@@ -39,7 +39,7 @@ console.log(recipe)
             <Route exact path="/Nigerian" component={Home}/>
             <Route exact path="/" component={Home}/>
             {recipe.map(item => {return <Route exact path={`/recipe/${item.id}` } component={()=><Recipes recipe={item}/>}/>})}
-            <Route exact path="/submit" component={()=> <Form recipe={recipe} recipeSetter={recipeSetter}/>}/>
+            <Route exact path="/new_recipe" component={()=> <Form recipe={recipe} recipeSetter={recipeSetter}/>}/>
           </Switch>
         <Footer/>
       </Router>
