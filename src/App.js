@@ -2,14 +2,14 @@ import './App.css';
 import NavbarTop from "./Components/NavbarTop"
 import Footer from "./Components/Footer"
 import Home from "./Components/Home"
+import Recipes from "./Components/Recipes.js"
 import RecipeContainer from "./Components/RecipeContainer"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 import { useState, useEffect } from 'react';
-import Recipes from "./Components/Recipes"
 
 function App() {
 
-  const [recipeData, recipeDataSetter] = useState([])
+  // const [recipeData, recipeDataSetter] = useState([])
   const [recipe, recipeSetter] = useState([]);
   const [sorted, sortedSetter] = useState(false);
 
@@ -18,11 +18,14 @@ function App() {
       .then((response) => response.json())
       .then(recipes => {
         // console.log(recipe);
-        recipeDataSetter(recipes);
+        // recipeDataSetter(recipes);
         recipeSetter(recipes)
       })
   }, [])
 
+// let t = recipeData.map(item => recipeSetter(item))
+
+console.log(recipe)
   return (
     <div className="App">
       <Router>
@@ -34,7 +37,7 @@ function App() {
             <Route exact path="/Caribbean" component={Home}/>
             <Route exact path="/Nigerian" component={Home}/>
             <Route exact path="/" component={Home}/>
-            <Route exact path={`/recipes/${recipe.recipe.name}` } component={() => <Recipes recipe={recipes.recipes} />} />
+            {recipe.map(item => {return <Route exact path={`/recipe/${item.id}` } component={()=><Recipes recipe={item}/>}/>})}
           </Switch>
         <Footer/>
       </Router>
