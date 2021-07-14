@@ -24,9 +24,6 @@ function App() {
       })
   }, [])
 
-// let t = recipeData.map(item => recipeSetter(item))
-
-console.log(recipe)
   return (
     <div className="App">
       <Router>
@@ -40,6 +37,8 @@ console.log(recipe)
             <Route exact path="/" component={Home}/>
             {recipe.map(item => {return <Route exact path={`/recipe/${item.id}` } component={()=><Recipes recipe={item}/>}/>})}
             <Route exact path="/new_recipe" component={()=> <Form recipe={recipe} recipeSetter={recipeSetter}/>}/>
+         
+
           </Switch>
         <Footer/>
       </Router>
