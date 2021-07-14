@@ -11,7 +11,10 @@ function RecipeElement(recipe){
                 <div className="card-body">
                     <h5 className="card-title">{recipe.recipe.name}</h5>
                     {/* <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-                    <button className="btn btn-outline-success">View Recipe</button>
+                    <div class="card border-success mb-3">
+                            <p class="card-text">{recipe.recipe.description}</p>
+                    </div>
+                    <a href={`recipe/${recipe.name}`} className="btn btn-outline-success">View Recipe</a>
                 </div>
                 </div>
             </div>        

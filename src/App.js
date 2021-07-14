@@ -5,6 +5,7 @@ import Home from "./Components/Home"
 import RecipeContainer from "./Components/RecipeContainer"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 import { useState, useEffect } from 'react';
+import Recipes from "./Components/Recipes"
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/Caribbean" component={Home}/>
             <Route exact path="/Nigerian" component={Home}/>
             <Route exact path="/" component={Home}/>
+            <Route exact path={`/recipes/${recipe.recipe.name}` } component={() => <Recipes recipe={recipes.recipes} />} />
           </Switch>
         <Footer/>
       </Router>
