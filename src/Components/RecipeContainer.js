@@ -39,7 +39,7 @@ function RecipeContainer(recipe){
     return (
         <div>
             <h2>Recipes</h2>
-            <div class="container ">
+            <div className="container ">
             <div className="dropdrown btn-group">
                 <button className="filter-btns btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty</button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
