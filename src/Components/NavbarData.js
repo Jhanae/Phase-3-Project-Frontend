@@ -7,49 +7,28 @@ import * as RiIcons from 'react-icons/ri';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/overview',
+    path: '/',
     icon: <AiIcons.AiFillHome />
   },
   {
     title: 'About',
-    path: '/support',
+    path: '/about',
     icon: <IoIcons.IoMdHelpCircle />
   },
   {
     title: 'Recipes',
-    path: '/reports',
-    icon: <IoIcons.IoIosPaper />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+    path: '/recipes',
+    icon: <IoIcons.IoIosPaper />
 
-    subNav: [
-      {
-        title: 'All Recipes',
-        path: '/reports/reports1',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
-      },
-      {
-        title: 'Country/Region',
-        path: '/reports/reports2',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
-      },
-      {
-        title: 'Difficulty',
-        path: '/reports/reports3',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
   },
   {
     title: 'Country/Region',
-    path: '/recipes',
+    path: '/country',
     icon: <FaIcons.FaCartPlus />
   },
   {
     title: 'Difficulty',
-    path: '/messages',
+    path: '/difficulty',
     icon: <FaIcons.FaEnvelopeOpenText />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -58,29 +37,29 @@ export const SidebarData = [
     subNav: [
       {
         title: 'A Walk in the Park',
-        path: '/messages/message1',
+        path: '/recipes/easy',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: 'Challenge Yourself',
-        path: '/messages/message2',
+        path: '/recipes/challenging',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Oh, So you think your a chef?',
-        path: '/messages/message2',
+        title: "Oh, So you think you're a chef?",
+        path: '/recipes/hard',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
     title: 'Reviews',
-    path: '/support',
+    path: '/reviews',
     icon: <IoIcons.IoMdHelpCircle />
   },
   {
     title: 'Contact Us',
-    path: '/support',
+    path: '/contact-us',
     icon: <IoIcons.IoMdHelpCircle />
   },
 
