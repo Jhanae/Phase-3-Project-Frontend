@@ -109,3 +109,9 @@ h1{
 .card {
   max-width: 18rem;
 }
+
+/* Recipes Page */
+.instructions{
+  background-color: rgb(9, 87, 29);
+  margin-bottom: 1rem;
+}
