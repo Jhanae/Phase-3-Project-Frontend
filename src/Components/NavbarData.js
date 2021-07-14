@@ -67,5 +67,11 @@ export const SidebarData = [
     title: 'Support',
     path: '/support',
     icon: <IoIcons.IoMdHelpCircle />
+  },
+  {
+    title:'Submit a Recipe',
+    path: '/submit',
+    icon: <IoIcons.IoMdHelpCircle/>
+
   }
 ];
