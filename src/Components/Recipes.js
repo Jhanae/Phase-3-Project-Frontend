@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Recipes(recipe) {
     const [ingredient, setIngredient] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:9393/ingredients")
-          .then((response) => response.json())
-          .then(ingredients => {
-            setIngredient(ingredients)
-          })
-      }, [])
+        async function fetchData(){
+        let response = await fetch("http://localhost:9393/ingredients")
+        response = await response.json()
+        setIngredient(response)
+        }
+        fetchData()
+      }, []);
 // 
-    // const filterIngredient = ingredient.find(item => item.id === recipe.recipe.id).ingredients
+    const filterIngredient = ingredient.find(item => item.id === recipe.recipe.id)
     // console.log(ingredient.find(item => item.id === recipe.recipe.id).ingredients)
     return(
         <div className="text-center carousel slide">
@@ -38,7 +39,7 @@ function Recipes(recipe) {
             <div className="row instructions">
                 <div className="col">
                 <h1 className=" card-title">Ingredients</h1>
-                {/* <p>{filterIngredient}</p> */}
+                {filterIngredient ? filterIngredient.ingredients.split(",").map(item => <li>{item}</li>) : null}
                 {/* {filterIngredient.ingredients.split(",").map((item) => <li>{item}</li>)} */}
                 </div>
                 <div className="col">
