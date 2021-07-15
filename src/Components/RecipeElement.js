@@ -7,9 +7,13 @@ console.log(recipeItem)
         
         // const filteredArray = recipeItem.filter((item) => item.id !== recipeID)
 
-        fetch(`http://localhost:9393/recipes/${recipe.recipe.id}`,{
+        fetch(`http://localhost:9393/recipes/${recipeID}`,{
             method: "DELETE"
-        }).then(item => recipeItem.id !== recipeID ? setrecipeItem(item) : null)
+        }).then(()=>{
+          let newRecipes = recipe.recipe.filter((item)=>item.id!==recipeID)
+          recipe.recipeSetter(newRecipes)
+        })
+        
     }
     return (
         // <div className="row row-cols-2 row-cols-md-3">
