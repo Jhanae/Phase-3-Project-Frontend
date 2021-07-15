@@ -12,8 +12,6 @@ function App() {
 
   // const [recipeData, recipeDataSetter] = useState([])
   const [recipe, recipeSetter] = useState([]);
-  const [sorted, sortedSetter] = useState(false);
-
   useEffect(() => {
     fetch("http://localhost:9393/recipes")
       .then((response) => response.json())

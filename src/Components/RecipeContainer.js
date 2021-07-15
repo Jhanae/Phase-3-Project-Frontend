@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
-import { Dropdown } from 'bootstrap';
 import Logo from "../Pictures/logo.png"
 import RecipeElement from "./RecipeElement"
+import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap.js';
+import $ from 'jquery';
 
 function RecipeContainer(recipe){
 
@@ -13,29 +15,40 @@ function RecipeContainer(recipe){
 
     const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.country.toLowerCase().includes(searchText.toLowerCase()))
     const filterDifficulty = filterText.filter(item => item.difficulty === difficulty)
-    const filterCountry= filterDifficulty.filter(item => item.country === country)
+    const filterCountry= filterText.filter(item => item.country === country)
 
 
     let Recipe;
-
-    if(difficulty !== 'All')
+// console.log(difficulty)
+    if(difficulty === 'All')
     {
-        Recipe = filterDifficulty.map(item => {
-            return <RecipeElement recipe={item} key={item.id} />
-        })
-    }
-    // if(country === 'All')
-    // {
-    //     Recipe = filterCountry.map(item => {
-    //         return <RecipeElement recipe={item} key={item.id} />
-    //     })
-    // }
-    else{
         Recipe = filterText.map(item => {
             // console.log(item);
             return <RecipeElement recipe={item} key={item.id} />
          })
-    }  
+    }
+    else{
+        Recipe = filterDifficulty.map(item => {
+            // console.log(item);
+            return <RecipeElement recipe={item} key={item.id} />
+         })
+    }
+
+    if(country === 'All')
+    {
+        Recipe = filterText.map(item => {
+            // console.log(item);
+            return <RecipeElement recipe={item} key={item.id} />             
+        })
+    }
+    else{
+        Recipe = filterCountry.map(item => {
+            // console.log(item);
+            return <RecipeElement recipe={item} key={item.id} />
+         })
+        }
+    
+    
     return (
         <div>
             <h2>Recipes</h2>
@@ -43,7 +56,7 @@ function RecipeContainer(recipe){
             <div className="dropdrown btn-group">
                 <button className="filter-btns btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Difficulty</button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <button onClick={(e) => setDifficulty(e.target.value)} value="All"  className="dropdown-item">All</button>
+                    <button onClick={(e) => setDifficulty(e.target.value)} value="All"  className="dropdown-item ">All</button>
                     <button onClick={(e) => setDifficulty(e.target.value)} value="Walk in the Park" className="dropdown-item">Walk in the Park</button>
                     <button onClick={(e) => setDifficulty(e.target.value)} value="Challenge yourself" className="dropdown-item">Challenge yourself</button>
                     <button onClick={(e) => setDifficulty(e.target.value)} value="So you think you're a chef?" className="dropdown-item">So you think you're a chef?</button>

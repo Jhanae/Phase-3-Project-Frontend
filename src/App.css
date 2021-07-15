@@ -115,3 +115,27 @@ h1{
   background-color: rgb(9, 87, 29);
   margin-bottom: 1rem;
 }
+
+/* New Recipe Form */
+.form{
+  background-color: rgb(9, 87, 29);
+}
+.form-input{
+  width: 60%;
+  display:inline-block;
+}
+.form-label{
+  float: left;
+  font-weight: bold;
+}
+
+/* Recipe Page */
+.recipe-page{
+  font-size: 20px;
+  font-weight: bold;
+  display:initial;
+}
+.details{
+  font-size: 18px;
+  font-weight: 500;
+}

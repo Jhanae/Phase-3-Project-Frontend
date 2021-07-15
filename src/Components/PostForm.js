@@ -58,35 +58,43 @@ function handleImageURL(e){
 return(
     
         <form onSubmit={handleSubmit}>
-                <div className="form-group">
-    <label>Name</label>
+            <br/>
+            <h1 className="form-title">Add a new Recipe</h1>
+            <br/>
+            <div className="form">
+                <div className="form-input">
+    <label className="form-label">Name: </label>
     <input type="text" className="form-control" id="name" onChange={handleName} value={recipeName} />
                 </div>
-                <div className="form-group">
-    <label>Country</label>
+                <div className="form-input">
+    <label className="form-label">Country: </label>
     <input type="text" className="form-control" id="country" onChange={handleCountry} value={country} />
                 </div>
-                <div className="form-group">
-    <label>Difficulty</label>
+                <div className="form-input">
+    <label className="form-label">Difficulty: </label>
     <input type="text" className="form-control" id="difficulty" onChange={handleDifficulty} value={difficulty} />
                 </div>
-                <div className="form-group">
-    <label>Ingredients</label>
+                <div className="form-input">
+    <label className="form-label">Ingredients: </label>
     <input type="text" className="form-control" id="ingredients" onChange={handleIngredients} value={ingredients} />
                 </div>
-                <div className="form-group">
-    <label>Instructions</label>
+                <div className="form-input">
+    <label className="form-label">Instructions: </label>
     <input type="text" className="form-control" id="instructions" onChange={handleInstructions} value={instructions} />
                 </div>
-                <div className="form-group">
-    <label>Description</label>
+                <div className="form-input">
+    <label className="form-label">Description: </label>
     <input type="text" className="form-control" id="description" onChange={handleDescription} value={description} />
                 </div>
-                <div className="form-group">
-    <label>Image URL</label>
+                <div className="form-input">
+    <label className="form-label">Image URL: </label>
     <input type="text" className="form-control" id="image" onChange={handleImageURL} value={imageURL} />
                 </div>
-            <button type="submit">Submit!</button>
+                <br/>
+                <br/>
+            <button type="submit"className="btn btn-success mb-2">Submit!</button>
+            </div>
+            <br/>
             </form>
             
 )

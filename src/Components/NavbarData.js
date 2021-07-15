@@ -70,7 +70,7 @@ export const SidebarData = [
   },
   {
     title:'Submit a Recipe',
-    path: '/submit',
+    path: '/new_recipe',
     icon: <IoIcons.IoMdHelpCircle/>
 
   }

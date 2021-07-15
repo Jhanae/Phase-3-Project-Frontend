@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Recipes(recipe) {
     const [ingredient, setIngredient] = useState([])
@@ -11,13 +12,23 @@ function Recipes(recipe) {
           })
       }, [])
 // 
-    // const filterIngredient = ingredient.filter(item => item.id === recipe.recipe.id).ingredients
-    console.log(ingredient.filter(item => item.id === recipe.recipe.id))
+    // const filterIngredient = ingredient.find(item => item.id === recipe.recipe.id).ingredients
+    // console.log(ingredient.find(item => item.id === recipe.recipe.id).ingredients)
     return(
         <div className="text-center carousel slide">
             <h1 className=" ">{recipe.recipe.name}</h1>
             <div className=" mb-3">
-                <img src={recipe.recipe.image} className="img-fluid " alt={recipe.name}/>
+                <img src={recipe.recipe.image} className="img-fluid recipe-page" alt={recipe.name}/>
+                <br/>
+                <br/>
+                <small className="recipe-page">Country: </small>
+                <small className="details">{recipe.recipe.country}</small>
+                <br/>
+                <small className="recipe-page">Description: </small>
+                <small className="details">{recipe.recipe.description}</small>
+                <br/>
+                <small className="recipe-page">Find more about this recipe by visiting:</small>
+                <Link>{recipe.recipe.url}</Link>
                 <div className="card-body">
                     
                     <p className="card-text">{recipe.description}</p>
