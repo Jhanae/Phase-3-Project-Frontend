@@ -20,33 +20,27 @@ function RecipeContainer(recipe){
 
     let Recipe;
 // console.log(difficulty)
-    if(difficulty === 'All')
-    {
-        Recipe = filterText.map(item => {
-            // console.log(item);
-            return <RecipeElement recipe={item} key={item.id} />
-         })
-    }
-    else{
-        Recipe = filterDifficulty.map(item => {
-            // console.log(item);
-            return <RecipeElement recipe={item} key={item.id} />
-         })
+if(difficulty !== 'All')
+{
+    Recipe = filterDifficulty.map(item => {
+        // console.log(item);
+        return <RecipeElement recipe={item} key={item.id} />
+     })
+}
+else if(country !== 'All')
+{
+    Recipe = filterCountry.map(item => {
+        // console.log(item);
+        return <RecipeElement recipe={item} key={item.id} />             
+    })
+}
+else{
+    Recipe = filterText.map(item => {
+        // console.log(item);
+        return <RecipeElement recipe={item} key={item.id} />
+     })
     }
 
-    if(country === 'All')
-    {
-        Recipe = filterText.map(item => {
-            // console.log(item);
-            return <RecipeElement recipe={item} key={item.id} />             
-        })
-    }
-    else{
-        Recipe = filterCountry.map(item => {
-            // console.log(item);
-            return <RecipeElement recipe={item} key={item.id} />
-         })
-        }
     
     
     return (
