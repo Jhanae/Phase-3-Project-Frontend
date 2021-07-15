@@ -13,7 +13,7 @@ function RecipeContainer(recipe){
     const [country, setCountry] = useState('All')
 
 
-    const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.country.toLowerCase().includes(searchText.toLowerCase()))
+    const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()))
     const filterDifficulty = filterText.filter(item => item.difficulty === difficulty)
     const filterCountry= filterText.filter(item => item.country === country)
 
