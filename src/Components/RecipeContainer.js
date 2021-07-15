@@ -13,41 +13,32 @@ function RecipeContainer(recipe){
     const [country, setCountry] = useState('All')
 
 
-    const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.country.toLowerCase().includes(searchText.toLowerCase()))
+    const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()))
     const filterDifficulty = filterText.filter(item => item.difficulty === difficulty)
-    const filterCountry= filterDifficulty.filter(item => item.country === country)
+    const filterCountry= filterText.filter(item => item.country === country)
 
 
     let Recipe;
-console.log(difficulty)
-    if(difficulty === 'All')
+    if(difficulty !== 'All')
     {
-        Recipe = filterText.map(item => {
-            // console.log(item);
-            return <RecipeElement recipeSetter={recipe.recipeSetter} recipes={recipe.recipes} recipe={item} key={item.id} />
-         })
-    }
-    else{
         Recipe = filterDifficulty.map(item => {
             // console.log(item);
             return <RecipeElement recipe={item} key={item.id} />
          })
     }
-
-    if(country === 'All')
+    else if(country !== 'All')
     {
-        Recipe = filterText.map(item => {
+        Recipe = filterCountry.map(item => {
             // console.log(item);
             return <RecipeElement recipe={item} key={item.id} />             
         })
     }
     else{
-        Recipe = filterCountry.map(item => {
+        Recipe = filterText.map(item => {
             // console.log(item);
             return <RecipeElement recipe={item} key={item.id} />
          })
         }
-    
     
     return (
         <div>
