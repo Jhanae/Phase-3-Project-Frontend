@@ -65,32 +65,33 @@ return(
             <br/>
             <div className="form">
                 <div className="form-input">
-    <label className="form-label">Name: </label>
-    <input type="text" className="form-control" id="name" onChange={handleName} value={recipeName} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Country: </label>
-    <input type="text" className="form-control" id="country" onChange={handleCountry} value={country} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Difficulty: </label>
-    <input type="text" className="form-control" id="difficulty" onChange={handleDifficulty} value={difficulty} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Ingredients: </label>
-    <input type="text" className="form-control" id="ingredients" onChange={handleIngredients} value={ingredients} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Instructions: </label>
-    <input type="text" className="form-control" id="instructions" onChange={handleInstructions} value={instructions} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Description: </label>
-    <input type="text" className="form-control" id="description" onChange={handleDescription} value={description} />
-                </div>
-                <div className="form-input">
-    <label className="form-label">Image URL: </label>
-    <input type="text" className="form-control" id="image" onChange={handleImageURL} value={imageURL} />
+                    <br/>
+                <label className="form-label">Name: </label>
+                <input type="text" className="form-control" id="name" onChange={handleName} value={recipeName} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Country: </label>
+                <input type="text" className="form-control" id="country" onChange={handleCountry} value={country} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Difficulty: </label>
+                <input type="text" className="form-control" id="difficulty" onChange={handleDifficulty} value={difficulty} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Ingredients: </label>
+                <input type="text" className="form-control" id="ingredients" onChange={handleIngredients} value={ingredients} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Instructions: </label>
+                <input type="text" className="form-control" id="instructions" onChange={handleInstructions} value={instructions} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Description: </label>
+                <input type="text" className="form-control" id="description" onChange={handleDescription} value={description} />
+                            </div>
+                            <div className="form-input">
+                <label className="form-label">Image URL: </label>
+                <input type="text" className="form-control" id="image" onChange={handleImageURL} value={imageURL} />
                 </div>
                 <br/>
                 <br/>

@@ -60,7 +60,7 @@ const Sidebar = () => {
         <Nav>
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
-            <a className="web-title align-self-start" href="/">&nbsp;&nbsp;Recipe Finder&nbsp;&nbsp;</a>
+            <Link className="web-title align-self-start" to="/">&nbsp;&nbsp;Recipe Finder&nbsp;&nbsp;</Link>
             <img src={Logo} alt="logo" className="logo"></img>
           </NavIcon>
         </Nav>
