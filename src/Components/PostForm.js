@@ -9,6 +9,7 @@ function Form({recipes,setRecipes}) {
     const [instructions, setInstructions]=useState("")
     const [description, setDescription]=useState("")
     const [imageURL, setImageURL]=useState("")
+    
 
 
 function handleName(e){
@@ -47,7 +48,8 @@ function handleImageURL(e){
           }, 
         body: JSON.stringify(newRecipe),
         
-    })
+    }).then(response=>response.json())
+    .then(data=>setRecipes([...recipes,data]))
     console.log(newRecipe)
 
     // .then((response) => response.json())
