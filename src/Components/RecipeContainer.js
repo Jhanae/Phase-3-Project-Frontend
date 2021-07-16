@@ -5,18 +5,14 @@ import 'bootstrap';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 
-function RecipeContainer(recipe){
+function RecipeContainer({recipe, setDifficulty, difficulty, country, setCountry}){
 
 
     const [searchText, setSearch] = useState("")
-    const [difficulty, setDifficulty] = useState('All')
-    const [country, setCountry] = useState('All')
-
-
-    const filterText = recipe.recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()))
+    
+    const filterText = recipe.filter(item => item.name.toLowerCase().includes(searchText.toLowerCase()))
     const filterDifficulty = filterText.filter(item => item.difficulty === difficulty)
     const filterCountry= filterText.filter(item => item.country === country)
-
 
     let Recipe;
     if(difficulty !== 'All')

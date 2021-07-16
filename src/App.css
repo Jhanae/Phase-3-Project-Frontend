@@ -145,3 +145,16 @@ h1{
   font-weight:500;
   font-size:larger;
 }
+.subscribeInput{
+  width: 18rem;
+  margin: auto;
+  text-align: center;
+}
+.subscribe-btn{
+  width: 10rem;
+  height: 28px;
+  border-radius: 4px;
+  padding: auto;
+  margin: auto;
+  font-size: 16px;
+}

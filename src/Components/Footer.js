@@ -35,8 +35,10 @@ function Footer(){
                 <div className="row">
                     <p className="col-sm">
                         &copy;{new Date().getFullYear()} RECIPEFINDER INC | All rights reserved | Terms of Service | Privacy
-                    </p>
+                    </p> 
                 </div>
+                <input type="text" className="form-control mb-3 subscribeInput" placeholder="Join our Newsletter" aria-label="" />
+                <div class="btn-primary subscribe-btn mb-3" role="group" aria-label="...">Subscribe</div>
             </div>
         </div>
     )

@@ -2,11 +2,11 @@ import HomeCarousel from "./Carousel"
 import Header from "./Header"
 import HomeBody from "./HomeBody"
 
-function Home (){
+function Home ({difficulty, setDifficulty, country, setCountry}){
    return(
       <div>
          <Header/>
-         <HomeBody />
+         <HomeBody difficulty={difficulty} setDifficulty={setDifficulty} country={country} setCountry={setCountry} />
          
       </div>
    )

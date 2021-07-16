@@ -11,6 +11,7 @@ function HomeCarousel (){
                 />
                 <Carousel.Caption>
                 <h3>Escovitch Fish</h3>
+                <p>This Escovitch fish recipe is crispy fried fish topped with a spicy pickled vegetable medley. It it a must try!</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

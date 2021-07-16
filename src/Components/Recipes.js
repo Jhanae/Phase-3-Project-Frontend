@@ -12,8 +12,8 @@ function Recipes(recipe) {
         }
         fetchData()
       }, []);
-// 
-    const filterIngredient = ingredient.find(item => item.id === recipe.recipe.id)
+    
+    const filterIngredient =  ingredient.find(item => item.id === recipe.recipe.id)
     // console.log(ingredient.find(item => item.id === recipe.recipe.id).ingredients)
     return(
         <div className="text-center carousel slide">

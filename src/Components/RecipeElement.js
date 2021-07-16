@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 function RecipeElement(recipe){
     const [recipeItem, setrecipeItem] = useState(recipe.recipe)
 
-console.log(recipeItem)
+// console.log(recipeItem)
     function handleDelete(recipeID){
         
         // const filteredArray = recipeItem.filter((item) => item.id !== recipeID)

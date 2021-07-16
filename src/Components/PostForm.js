@@ -9,7 +9,7 @@ function Form({recipes,setRecipes}) {
     const [instructions, setInstructions]=useState("")
     const [description, setDescription]=useState("")
     const [imageURL, setImageURL]=useState("")
-    
+    const [url, setURL]=useState("")
 
 
 function handleName(e){
@@ -33,13 +33,16 @@ function handleDescription(e){
 function handleImageURL(e){
     setImageURL(e.target.value);
 }
+function handleURL(e){
+    setURL(e.target.value);
+}
 
 // const addNewRecipe=newRecipe=>{const newArray=[...recipes, newRecipe]
 // setRecipes(newArray)}
 
     function handleSubmit(e){
     e.preventDefault()
-    const newRecipe={name:recipeName,country:country,difficulty:difficulty,instructions:instructions,ingredients:ingredients,description:description,image:imageURL}
+    const newRecipe={name:recipeName,country:country,difficulty:difficulty,instructions:instructions,ingredients:ingredients,description:description,image:imageURL, url:url}
     fetch("http://localhost:9393/new_recipe",{
         method: "POST", 
         headers: {
@@ -51,6 +54,19 @@ function handleImageURL(e){
     }).then(response=>response.json())
     .then(data=>setRecipes([...recipes,data]))
     console.log(newRecipe)
+
+    const newIngredient={ingredients:ingredients}
+    fetch("http://localhost:9393/new_ingredient",{
+        method: "POST", 
+        headers: {
+            "Accept": "application/json", 
+            "Content-Type": "application/json"
+          }, 
+        body: JSON.stringify(newIngredient),
+        
+    }).then(response=>response.json())
+    .then(data=>setIngredients([...ingredients,data]))
+    console.log(newIngredient)
 
     // .then((response) => response.json())
     // .then(response => addNewRecipe(response)) 
@@ -92,6 +108,10 @@ return(
                             <div className="form-input">
                 <label className="form-label">Image URL: </label>
                 <input type="text" className="form-control" id="image" onChange={handleImageURL} value={imageURL} />
+                </div>
+                <div className="form-input">
+                <label className="form-label">URL: </label>
+                <input type="text" className="form-control" id="url" onChange={handleURL} value={url} />
                 </div>
                 <br/>
                 <br/>
