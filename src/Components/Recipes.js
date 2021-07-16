@@ -12,7 +12,7 @@ function Recipes(recipe) {
         }
         fetchData()
       }, []);
-    
+    console.log(recipe)
     const filterIngredient =  ingredient.find(item => item.id === recipe.recipe.id)
     // console.log(ingredient.find(item => item.id === recipe.recipe.id).ingredients)
     return(
