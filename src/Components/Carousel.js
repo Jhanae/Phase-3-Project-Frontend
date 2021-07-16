@@ -11,7 +11,6 @@ function HomeCarousel (){
                 />
                 <Carousel.Caption>
                 <h3>Escovitch Fish</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -23,7 +22,7 @@ function HomeCarousel (){
 
                 <Carousel.Caption>
                 <h3>Salvadoran Pupusas Revueltas</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>El Salvadorian treat, consisting of thick corn tortillas stuffed with cheese, beans, and/or pork. They are easy to make at home.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -35,7 +34,7 @@ function HomeCarousel (){
 
                 <Carousel.Caption>
                 <h3>Jamaican Curry Mutton</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <p>Jamaican Curry Goat – insanely delicious slow-cooked Jamaican Spiced Curry that is full of flavor and tender to the bone! An absolutely must-make Jamaican food!</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -47,7 +46,7 @@ function HomeCarousel (){
 
                 <Carousel.Caption>
                 <h3>Nigerian Jollof</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <p>Nigerian Jollof Rice or Jellof rice is a rich and incredibly tasty west African one-pot Meal. It is a very versatile dish, and it is usually made from scratch using Rice, Tomatoes, Pimento peppers, Tomato paste, Scotch bonnet, Onions, Salt, and other spices.</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
