@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import { useHistory } from "react-router-dom";
+
 // need to pass down recipes and setrecipes props
 function Form({recipes,setRecipes}) {
 
@@ -10,7 +12,7 @@ function Form({recipes,setRecipes}) {
     const [description, setDescription]=useState("")
     const [imageURL, setImageURL]=useState("")
     const [url, setURL]=useState("")
-
+let history = useHistory();
 
 function handleName(e){
     setName(e.target.value);
@@ -64,12 +66,16 @@ function handleURL(e){
           }, 
         body: JSON.stringify(newIngredient),
         
-    }).then(response=>response.json())
-    .then(data=>setIngredients([...ingredients,data]))
+    }).then(response=> response.json())
+    .then(data=>{
+        setIngredients([...ingredients,data]);
+        let url = "recipes";
+        history.push(url);})
     console.log(newIngredient)
 
     // .then((response) => response.json())
     // .then(response => addNewRecipe(response)) 
+    
 }
 
 

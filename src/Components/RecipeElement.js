@@ -12,7 +12,9 @@ function RecipeElement(recipe){
         }).then(()=>{
           let newRecipes = recipe.recipe.filter((item)=>item.id!==recipeID)
           recipe.recipeSetter(newRecipes)
+          
         })
+        
         
     }
     return (
